@@ -1,7 +1,5 @@
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using Web.Service;
+using Web.Extension;
+using Web.Middleware;
 
 namespace Web;
 
@@ -18,23 +16,8 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         builder.Services.AddHealthChecks();
-        builder.Services.AddSingleton<IAuthService, AuthService>();
-        builder.Services.AddSingleton<IBookService, BookService>();
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-        {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidIssuer = builder.Configuration["ISSUER"],
-                ValidateAudience = true,
-                ValidAudience = builder.Configuration["AUDIENCE"],
-                ValidateLifetime = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["KEY"]!)),
-                ValidateIssuerSigningKey = true
-            };
-        });
-        builder.Services.AddAuthorization();
+        builder.AddServices();
+        builder.AddSecurity();
 
         var app = builder.Build();
 
@@ -44,6 +27,7 @@ public class Program
             app.UseSwaggerUI();
         }
 
+        app.UseMiddleware<RequestLoggingMiddleware>();
         app.UseAuthentication();
         app.UseAuthorization();
         app.MapControllers();
