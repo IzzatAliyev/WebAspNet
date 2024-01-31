@@ -1,18 +1,25 @@
-using System.Text.Json;
-using Web.Model;
+// Copyright (c) IUA. All rights reserved.
 
 namespace Web.Service;
 
+using System.Text.Json;
+using Web.Model;
+
+/// <summary>
+/// Book service.
+/// </summary>
 public class BookService : IBookService
 {
+    /// <inheritdoc/>
     public async Task<Book> GetBook(string id)
     {
         using var read = new FileStream("./DB/books.json", FileMode.Open);
-        Book[]? books = await JsonSerializer.DeserializeAsync<Book[]>(read);
+        var books = await JsonSerializer.DeserializeAsync<Book[]>(read);
         var book = books!.First(x => x.Id == id);
         return book;
     }
 
+    /// <inheritdoc/>
     public async Task<List<Book>> GetBooks()
     {
         using var read = new FileStream("./DB/books.json", FileMode.Open);
