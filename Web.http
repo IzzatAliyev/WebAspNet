@@ -3,7 +3,7 @@
 @BookPath = {{Web_HostAddress}}/api/book
 @HealthPath = {{Web_HostAddress}}/api/health
 
-@Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaXp6YXQiLCJleHAiOjE3MDY4MTcwOTgsImlzcyI6IldlYkFwaUlzc3VlciIsImF1ZCI6IldlYkFwaUF1ZGllbmNlIn0.TsJbteU4OCoKu7Josq0oz5qjQUcQBtd0v7FlBlde_kM
+@Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaXp6YXQiLCJleHAiOjE3MDY4MjgwODIsImlzcyI6IldlYkFwaUlzc3VlciIsImF1ZCI6IldlYkFwaUF1ZGllbmNlIn0.tXZYzp4Ikx28YeZ_z08tFVeCzR79PK1WQG-B2L6Erko
 
 ### Auth ###
 GET {{AuthPath}}/login/izzat

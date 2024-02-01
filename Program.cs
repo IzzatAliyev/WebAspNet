@@ -2,6 +2,7 @@
 
 namespace Web;
 
+using Web.DB;
 using Web.Extension;
 using Web.Middleware;
 
@@ -26,6 +27,7 @@ public class Program
     builder.Services.AddHealthChecks();
     builder.AddServices();
     builder.AddSecurity();
+    builder.Services.AddDbContext<AppDbContext>();
 
     var app = builder.Build();
 
@@ -34,13 +36,16 @@ public class Program
       app.UseSwagger();
       app.UseSwaggerUI();
     }
+    else
+    {
+      app.UseHttpsRedirection();
+    }
 
     app.UseMiddleware<RequestLoggingMiddleware>();
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
 
-    // app.UseHttpsRedirection();
     app.Run();
   }
 }
