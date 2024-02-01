@@ -1,6 +1,31 @@
 @Web_HostAddress = http://localhost:5116
+@AuthPath = {{Web_HostAddress}}/api/auth
+@BookPath = {{Web_HostAddress}}/api/book
+@HealthPath = {{Web_HostAddress}}/api/health
 
-GET {{Web_HostAddress}}/weatherforecast/
+@Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaXp6YXQiLCJleHAiOjE3MDY4MTcwOTgsImlzcyI6IldlYkFwaUlzc3VlciIsImF1ZCI6IldlYkFwaUF1ZGllbmNlIn0.TsJbteU4OCoKu7Josq0oz5qjQUcQBtd0v7FlBlde_kM
+
+### Auth ###
+GET {{AuthPath}}/login/izzat
+Accept: text/plain
+
+###
+
+### Book ###
+GET {{BookPath}}
+Accept: application/json
+Authorization: Bearer {{Token}}
+
+###
+
+GET {{BookPath}}/C7131631-2B58-758B-45B9-549EA6C92B93
+Accept: application/json
+Authorization: Bearer {{Token}}
+
+###
+
+### Health ###
+GET {{HealthPath}}
 Accept: application/json
 
 ###
