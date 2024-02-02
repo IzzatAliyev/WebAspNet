@@ -26,6 +26,12 @@ public class Program
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
     builder.Services.AddHealthChecks();
+    builder.Services.AddOutputCache(opt =>
+    {
+      opt.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(30);
+      opt.AddPolicy("Cars", builder => builder.Expire(TimeSpan.FromSeconds(40)));
+      opt.AddPolicy("Car", builder => builder.Expire(TimeSpan.FromMinutes(2)));
+    });
     builder.AddServices();
     builder.AddSecurity();
     builder.Services.AddDbContext<AppDbContext>();
@@ -44,6 +50,7 @@ public class Program
       app.UseHttpsRedirection();
     }
 
+    app.UseOutputCache();
     app.UseExceptionHandler();
     app.UseMiddleware<RequestLoggingMiddleware>();
     app.UseAuthentication();

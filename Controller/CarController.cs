@@ -4,6 +4,7 @@ namespace Web.Controller;
 
 using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using Web.Dto.Req;
 using Web.Service;
 
@@ -30,6 +31,7 @@ public class CarController : ControllerBase
     /// </summary>
     /// <returns>the list of cars.</returns>
     [HttpGet]
+    [OutputCache(PolicyName = "Cars")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> GetCars()
@@ -43,6 +45,7 @@ public class CarController : ControllerBase
     /// <param name="id">the id of car.</param>
     /// <returns>the car.</returns>
     [HttpGet("{id}")]
+    [OutputCache(PolicyName = "Car")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> GetCar([FromRoute] int id)
