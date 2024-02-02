@@ -49,7 +49,7 @@ public class CarService : ICarService
     }
 
     /// <inheritdoc/>
-    public async Task<CarResponse> GetCar(int id)
+    public async ValueTask<CarResponse> GetCar(int id)
     {
         Car? car = await this.appDbContext.Set<Car>().FindAsync(id);
         if (car != null && car.Name != null)

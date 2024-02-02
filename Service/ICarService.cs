@@ -21,7 +21,7 @@ public interface ICarService
     /// </summary>
     /// <param name="id">the id of car.</param>
     /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
-    public Task<CarResponse> GetCar(int id);
+    public ValueTask<CarResponse> GetCar(int id);
 
     /// <summary>
     /// Add new car.
