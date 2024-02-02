@@ -4,6 +4,7 @@ namespace Web;
 
 using Web.DB;
 using Web.Extension;
+using Web.Handler;
 using Web.Middleware;
 
 /// <summary>
@@ -28,6 +29,8 @@ public class Program
     builder.AddServices();
     builder.AddSecurity();
     builder.Services.AddDbContext<AppDbContext>();
+    builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+    builder.Services.AddProblemDetails();
 
     var app = builder.Build();
 
@@ -41,6 +44,7 @@ public class Program
       app.UseHttpsRedirection();
     }
 
+    app.UseExceptionHandler();
     app.UseMiddleware<RequestLoggingMiddleware>();
     app.UseAuthentication();
     app.UseAuthorization();
