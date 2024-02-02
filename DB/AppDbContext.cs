@@ -15,7 +15,6 @@ public class AppDbContext : DbContext
     /// </summary>
     public AppDbContext()
     {
-        this.Database.EnsureDeleted();
         this.Database.EnsureCreated();
     }
 
@@ -28,5 +27,12 @@ public class AppDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         options.UseSqlite("Data Source=web.db;");
+    }
+
+    /// <inheritdoc/>
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Car>().HasKey(x => x.Id);
+        modelBuilder.Entity<Car>().Property(x => x.Id).ValueGeneratedOnAdd();
     }
 }

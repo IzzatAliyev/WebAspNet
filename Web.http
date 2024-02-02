@@ -1,31 +1,82 @@
-@Web_HostAddress = http://localhost:5116
+@Web_HostAddress = {{baseUrl}}
 @AuthPath = {{Web_HostAddress}}/api/auth
 @BookPath = {{Web_HostAddress}}/api/book
 @HealthPath = {{Web_HostAddress}}/api/health
+@CarPath = {{Web_HostAddress}}/api/car
 
-@Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaXp6YXQiLCJleHAiOjE3MDY4MjgwODIsImlzcyI6IldlYkFwaUlzc3VlciIsImF1ZCI6IldlYkFwaUF1ZGllbmNlIn0.tXZYzp4Ikx28YeZ_z08tFVeCzR79PK1WQG-B2L6Erko
+@Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaXp6YXQiLCJleHAiOjE3MDY5MDAwMjAsImlzcyI6IldlYkFwaUlzc3VlciIsImF1ZCI6IldlYkFwaUF1ZGllbmNlIn0.b82AhAoxa-5ZCX5xda8v0Ycn1gDVlk8Bw3EE30xHNss
 
-### Auth ###
+##### Auth #####
+
+### Login ###
 GET {{AuthPath}}/login/izzat
 Accept: text/plain
 
 ###
 
-### Book ###
+##### Book #####
+
+### Get all books ###
 GET {{BookPath}}
 Accept: application/json
 Authorization: Bearer {{Token}}
 
 ###
 
+### Get book by id ###
 GET {{BookPath}}/C7131631-2B58-758B-45B9-549EA6C92B93
 Accept: application/json
 Authorization: Bearer {{Token}}
 
 ###
 
-### Health ###
+##### Health #####
+
+### Check health ###
 GET {{HealthPath}}
+Accept: application/json
+
+###
+
+##### Car #####
+
+### Get all cars ###
+GET {{CarPath}}
+Accept: application/json
+
+###
+
+### Get car with id 1 ###
+GET {{CarPath}}/1
+Accept: application/json
+
+###
+
+### Create car ###
+POST  {{CarPath}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Audi",
+    "price": 2000
+}
+
+###
+
+### Update car with id 1 ###
+PATCH {{CarPath}}/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "BMW"
+}
+
+###
+
+### Delete car with id 4 ###
+DELETE {{CarPath}}/4
 Accept: application/json
 
 ###

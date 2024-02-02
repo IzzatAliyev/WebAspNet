@@ -3,3 +3,6 @@ bin/
 obj/
 .env
 run.txt
+.vscode/
+
+web.db**
