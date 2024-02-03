@@ -61,7 +61,7 @@ public class CarService : ICarService
     }
 
     /// <inheritdoc/>
-    public async Task<List<CarResponse>> GetCars()
+    public async IAsyncEnumerable<CarResponse> GetCars()
     {
         var responseList = new List<CarResponse>();
         var carList = await this.appDbContext.Set<Car>().ToListAsync();
@@ -69,11 +69,9 @@ public class CarService : ICarService
         {
             if (car.Name != null)
             {
-                responseList.Add(new CarResponse(car.Name, car.Price));
+                yield return new CarResponse(car.Name, car.Price);
             }
         }
-
-        return responseList;
     }
 
     /// <inheritdoc/>

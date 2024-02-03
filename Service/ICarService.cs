@@ -13,8 +13,8 @@ public interface ICarService
     /// <summary>
     /// Get cars.
     /// </summary>
-    /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
-    public Task<List<CarResponse>> GetCars();
+    /// <returns>list of cars.</returns>
+    public IAsyncEnumerable<CarResponse> GetCars();
 
     /// <summary>
     /// Get car by id.

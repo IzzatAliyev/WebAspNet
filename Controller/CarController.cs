@@ -34,9 +34,9 @@ public class CarController : ControllerBase
     [OutputCache(PolicyName = "Cars")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> GetCars()
+    public ActionResult GetCars()
     {
-        return this.Ok(await this.carService.GetCars());
+        return this.Ok(this.carService.GetCars());
     }
 
     /// <summary>
