@@ -3,6 +3,7 @@
 namespace Web.Controller;
 
 using System.Net;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
@@ -31,6 +32,7 @@ public class HealthController : ControllerBase
     /// Get result.
     /// </summary>
     /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
+    [DisableCors]
     [HttpGet]
     public async Task<IActionResult> Get()
     {

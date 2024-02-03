@@ -19,6 +19,7 @@ public class Program
   public static void Main(string[] args)
   {
     var builder = WebApplication.CreateBuilder(args);
+    var allowOriginCorsPolicyName = "AllowOriginCors";
 
     // Add services to the container.
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,14 +27,10 @@ public class Program
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
     builder.Services.AddHealthChecks();
-    builder.Services.AddOutputCache(opt =>
-    {
-      opt.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(30);
-      opt.AddPolicy("Cars", builder => builder.Expire(TimeSpan.FromSeconds(40)));
-      opt.AddPolicy("Car", builder => builder.Expire(TimeSpan.FromMinutes(2)));
-    });
+    builder.AddOutputCache();
     builder.AddServices();
     builder.AddSecurity();
+    builder.AddCors(allowOriginCorsPolicyName);
     builder.Services.AddDbContext<AppDbContext>();
     builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
     builder.Services.AddProblemDetails();
@@ -50,6 +47,7 @@ public class Program
       app.UseHttpsRedirection();
     }
 
+    app.UseCors(allowOriginCorsPolicyName);
     app.UseOutputCache();
     app.UseExceptionHandler();
     app.UseMiddleware<RequestLoggingMiddleware>();
