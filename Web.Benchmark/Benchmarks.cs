@@ -7,6 +7,7 @@ using BenchmarkDotNet.Attributes;
 /// <summary>
 /// Benchmark class.
 /// </summary>
+[MemoryDiagnoser]
 public class Benchmarks
 {
     /// <summary>
