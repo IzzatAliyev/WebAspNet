@@ -17,6 +17,7 @@ public static class ServiceExtension
     {
         builder.Services.AddSingleton<IAuthService, AuthService>();
         builder.Services.AddSingleton<IBookService, BookService>();
+        builder.Services.AddSingleton<ICommentService, CommentService>();
         builder.Services.AddScoped<ICarService, CarService>();
     }
 }

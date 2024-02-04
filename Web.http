@@ -4,6 +4,7 @@
 @HealthPath = {{Web_HostAddress}}/api/health
 @CarPath = {{Web_HostAddress}}/api/car
 @SecretPath = {{Web_HostAddress}}/api/secret
+@CommentPath = {{Web_HostAddress}}/api/comment
 
 @Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaXp6YXQiLCJleHAiOjE3MDY5MDAwMjAsImlzcyI6IldlYkFwaUlzc3VlciIsImF1ZCI6IldlYkFwaUF1ZGllbmNlIn0.b82AhAoxa-5ZCX5xda8v0Ycn1gDVlk8Bw3EE30xHNss
 
@@ -88,5 +89,13 @@ Accept: application/json
 GET {{SecretPath}}
 Accept: application/json
 X-API-KEY:{{XAPIKEY}}
+
+###
+
+##### Comment #####
+
+### Get all comments ###
+GET {{CommentPath}}
+Accept: application/json
 
 ###

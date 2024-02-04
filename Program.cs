@@ -2,6 +2,7 @@
 
 namespace Web;
 
+using Web.Constant;
 using Web.DB;
 using Web.Extension;
 using Web.Handler;
@@ -34,6 +35,10 @@ public class Program
     builder.Services.AddDbContext<AppDbContext>();
     builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
     builder.Services.AddProblemDetails();
+    builder.Services.AddHttpClient(HttpClientName.Comment.ToString(), configure =>
+    {
+      configure.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+    });
 
     var app = builder.Build();
 

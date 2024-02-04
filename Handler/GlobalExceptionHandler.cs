@@ -34,7 +34,7 @@ public class GlobalExceptionHandler : IExceptionHandler
         var problemDetails = new ProblemDetails
         {
             Status = StatusCodes.Status404NotFound,
-            Title = "Not found",
+            Title = exception.Message,
         };
 
         httpContext.Response.StatusCode = problemDetails.Status.Value;

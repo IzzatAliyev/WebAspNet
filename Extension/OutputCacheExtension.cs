@@ -16,6 +16,7 @@ public static class OutputCacheExtension
         builder.Services.AddOutputCache(opt =>
         {
             opt.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(30);
+            opt.AddPolicy("Comment", builder => builder.Expire(TimeSpan.FromMinutes(2)));
             opt.AddPolicy("Cars", builder => builder.Expire(TimeSpan.FromSeconds(40)));
             opt.AddPolicy("Car", builder => builder.Expire(TimeSpan.FromMinutes(2)));
         });
