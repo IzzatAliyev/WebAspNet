@@ -1,21 +1,38 @@
-﻿using System;
-using BenchmarkDotNet;
+﻿// Copyright (c) IUA. All rights reserved.
+
+namespace Web.Benchmark;
+
 using BenchmarkDotNet.Attributes;
 
-namespace Web.Benchmark
+/// <summary>
+/// Benchmark class.
+/// </summary>
+public class Benchmarks
 {
-    public class Benchmarks
+    /// <summary>
+    /// Global setup.
+    /// </summary>
+    [GlobalSetup]
+    public void GlobalSetup()
     {
-        [Benchmark]
-        public void Scenario1()
-        {
-            // Implement your benchmark here
-        }
+        // Setup
+    }
 
-        [Benchmark]
-        public void Scenario2()
-        {
-            // Implement your benchmark here
-        }
+    /// <summary>
+    /// Scenario 1.
+    /// </summary>
+    [Benchmark]
+    public void Scenario1()
+    {
+        // Implement your benchmark here
+    }
+
+    /// <summary>
+    /// Scenario 2.
+    /// </summary>
+    [Benchmark]
+    public void Scenario2()
+    {
+        // Implement your benchmark here
     }
 }
