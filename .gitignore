@@ -5,4 +5,5 @@ obj/
 run.txt
 .vscode/
 
+BenchmarkDotNet.Artifacts/
 web.db**
