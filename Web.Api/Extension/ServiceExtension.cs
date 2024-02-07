@@ -2,6 +2,7 @@
 
 namespace Web.Api.Extension;
 
+using Web.Api.Middleware;
 using Web.Api.Service;
 
 /// <summary>
@@ -19,6 +20,7 @@ public static class ServiceExtension
         builder.Services.AddSingleton<IAuthService, AuthService>();
         builder.Services.AddSingleton<IBookService, BookService>();
         builder.Services.AddSingleton<ICommentService, CommentService>();
+        builder.Services.AddTransient<RequestLoggingMiddleware>();
         return builder.Services.AddScoped<ICarService, CarService>();
     }
 }
