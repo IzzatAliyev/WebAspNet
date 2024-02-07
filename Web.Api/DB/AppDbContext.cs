@@ -32,7 +32,6 @@ public class AppDbContext : DbContext
     /// <inheritdoc/>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Car>().HasKey(x => x.Id);
-        modelBuilder.Entity<Car>().Property(x => x.Id).ValueGeneratedOnAdd();
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
 }
