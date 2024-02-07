@@ -1,11 +1,11 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Controller;
+namespace Web.Api.Controller;
 
 using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
-using Web.Service;
+using Web.Api.Service;
 
 /// <summary>
 /// Comment controller.

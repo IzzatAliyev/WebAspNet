@@ -1,9 +1,9 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Controller;
+namespace Web.Api.Controller;
 
 using Microsoft.AspNetCore.Mvc;
-using Web.Service;
+using Web.Api.Service;
 
 /// <summary>
 /// Auth controller.

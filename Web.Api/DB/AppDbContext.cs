@@ -1,9 +1,9 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.DB;
+namespace Web.Api.DB;
 
 using Microsoft.EntityFrameworkCore;
-using Web.Model;
+using Web.Api.Model;
 
 /// <summary>
 /// App DbContext.

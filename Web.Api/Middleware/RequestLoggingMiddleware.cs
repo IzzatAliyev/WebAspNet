@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Middleware;
+namespace Web.Api.Middleware;
 
 /// <summary>
 /// Request loggin middleware.

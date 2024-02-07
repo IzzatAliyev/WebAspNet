@@ -1,8 +1,8 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Extension;
+namespace Web.Api.Extension;
 
-using Web.Service;
+using Web.Api.Service;
 
 /// <summary>
 /// Service Extension class.
@@ -13,11 +13,12 @@ public static class ServiceExtension
     /// Add services.
     /// </summary>
     /// <param name="builder">the web application builder.</param>
-    public static void AddServices(this WebApplicationBuilder builder)
+    /// <returns>the service collection.</returns>
+    public static IServiceCollection AddServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddSingleton<IAuthService, AuthService>();
         builder.Services.AddSingleton<IBookService, BookService>();
         builder.Services.AddSingleton<ICommentService, CommentService>();
-        builder.Services.AddScoped<ICarService, CarService>();
+        return builder.Services.AddScoped<ICarService, CarService>();
     }
 }

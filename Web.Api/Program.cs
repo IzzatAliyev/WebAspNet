@@ -2,11 +2,11 @@
 
 namespace Web;
 
-using Web.Constant;
-using Web.DB;
-using Web.Extension;
-using Web.Handler;
-using Web.Middleware;
+using Web.Api.Extension;
+using Web.Api.Middleware;
+using Web.Api.Constant;
+using Web.Api.DB;
+using Web.Api.Handler;
 
 /// <summary>
 /// Starting class.

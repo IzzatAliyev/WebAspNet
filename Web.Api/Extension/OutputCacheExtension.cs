@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Extension;
+namespace Web.Api.Extension;
 
 /// <summary>
 /// Output cache extension class.
@@ -11,9 +11,10 @@ public static class OutputCacheExtension
     /// Add output cache.
     /// </summary>
     /// <param name="builder">the web application builder.</param>
-    public static void AddOutputCache(this WebApplicationBuilder builder)
+    /// <returns>the service collection.</returns>
+    public static IServiceCollection AddOutputCache(this WebApplicationBuilder builder)
     {
-        builder.Services.AddOutputCache(opt =>
+        return builder.Services.AddOutputCache(opt =>
         {
             opt.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(30);
             opt.AddPolicy("Comment", builder => builder.Expire(TimeSpan.FromMinutes(2)));

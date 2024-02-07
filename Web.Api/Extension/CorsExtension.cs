@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Extension;
+namespace Web.Api.Extension;
 
 /// <summary>
 /// Cors extension class.
@@ -12,9 +12,10 @@ public static class CorsExtension
     /// </summary>
     /// <param name="builder">the web application builder.</param>
     /// <param name="policyName">the policy name.</param>
-    public static void AddCors(this WebApplicationBuilder builder, string policyName)
+    /// <returns>the service collection.</returns>
+    public static IServiceCollection AddCors(this WebApplicationBuilder builder, string policyName)
     {
-        builder.Services.AddCors(opt =>
+        return builder.Services.AddCors(opt =>
         {
             opt.AddPolicy(policyName, policy =>
             {

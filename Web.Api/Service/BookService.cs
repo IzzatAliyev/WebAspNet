@@ -1,9 +1,9 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Service;
+namespace Web.Api.Service;
 
 using System.Text.Json;
-using Web.Model;
+using Web.Api.Model;
 
 /// <summary>
 /// Book service.

@@ -1,12 +1,12 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Controller;
+namespace Web.Api.Controller;
 
 using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
-using Web.Dto.Req;
-using Web.Service;
+using Web.Api.Dto.Req;
+using Web.Api.Service;
 
 /// <summary>
 /// Car controller.

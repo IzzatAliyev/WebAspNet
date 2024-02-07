@@ -1,10 +1,10 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Controller;
+namespace Web.Api.Controller;
 
 using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
-using Web.Attribute;
+using Web.Api.Attribute;
 
 /// <summary>
 /// Secret controller.

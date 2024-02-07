@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Handler;
+namespace Web.Api.Handler;
 
 using System;
 using System.Threading;

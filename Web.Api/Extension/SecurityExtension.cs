@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Extension;
+namespace Web.Api.Extension;
 
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,7 +15,8 @@ public static class SecurityExtension
     /// Add security.
     /// </summary>
     /// <param name="builder">the web application builder.</param>
-    public static void AddSecurity(this WebApplicationBuilder builder)
+    /// <returns>the service collection.</returns>
+    public static IServiceCollection AddSecurity(this WebApplicationBuilder builder)
     {
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         .AddJwtBearer(options =>
@@ -31,6 +32,6 @@ public static class SecurityExtension
                 ValidateIssuerSigningKey = true,
             };
         });
-        builder.Services.AddAuthorization();
+        return builder.Services.AddAuthorization();
     }
 }

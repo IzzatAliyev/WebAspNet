@@ -1,10 +1,9 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Service;
+namespace Web.Api.Service;
 
-using Microsoft.OpenApi.Extensions;
-using Web.Constant;
-using Web.Model;
+using Web.Api.Constant;
+using Web.Api.Model;
 
 /// <summary>
 /// Comment service.

@@ -1,12 +1,12 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Service;
+namespace Web.Api.Service;
 
 using Microsoft.EntityFrameworkCore;
-using Web.DB;
-using Web.Dto.Req;
-using Web.Dto.Res;
-using Web.Model;
+using Web.Api.DB;
+using Web.Api.Dto.Req;
+using Web.Api.Dto.Res;
+using Web.Api.Model;
 
 /// <summary>
 /// Car service.

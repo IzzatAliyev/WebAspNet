@@ -1,9 +1,9 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Service;
+namespace Web.Api.Service;
 
-using Web.Dto.Req;
-using Web.Dto.Res;
+using Web.Api.Dto.Req;
+using Web.Api.Dto.Res;
 
 /// <summary>
 /// Interface for car service.

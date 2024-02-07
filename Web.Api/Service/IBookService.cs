@@ -1,8 +1,8 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Service;
+namespace Web.Api.Service;
 
-using Web.Model;
+using Web.Api.Model;
 
 /// <summary>
 /// Interface for Book service.

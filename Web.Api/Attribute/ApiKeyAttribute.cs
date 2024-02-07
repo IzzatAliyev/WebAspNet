@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Attribute;
+namespace Web.Api.Attribute;
 
 using System;
 using System.Net.Mime;

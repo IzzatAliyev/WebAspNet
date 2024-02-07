@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Service;
+namespace Web.Api.Service;
 
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

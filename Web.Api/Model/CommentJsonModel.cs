@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Model;
+namespace Web.Api.Model;
 
 using System.Text.Json.Serialization;
 

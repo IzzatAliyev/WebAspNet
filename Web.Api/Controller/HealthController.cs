@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Controller;
+namespace Web.Api.Controller;
 
 using System.Net;
 using Microsoft.AspNetCore.Cors;

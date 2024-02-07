@@ -1,5 +1,5 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Dto.Res;
+namespace Web.Api.Dto.Res;
 
 public record CarResponse(string name, int price);

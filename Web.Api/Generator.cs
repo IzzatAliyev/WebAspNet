@@ -1,9 +1,9 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web;
+namespace Web.Api;
 
-using Web.DB;
-using Web.Model;
+using Web.Api.DB;
+using Web.Api.Model;
 
 /// <summary>
 /// Generator.

@@ -1,6 +1,6 @@
 // Copyright (c) IUA. All rights reserved.
 
-namespace Web.Constant;
+namespace Web.Api.Constant;
 
 /// <summary>
 /// Http client name enum.
