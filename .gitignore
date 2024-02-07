@@ -7,3 +7,4 @@ run.txt
 
 BenchmarkDotNet.Artifacts/
 web.db**
+.DS_Store
