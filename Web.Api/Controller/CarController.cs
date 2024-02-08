@@ -58,12 +58,24 @@ public class CarController : ControllerBase
     /// </summary>
     /// <param name="car">the car.</param>
     /// <returns>true, if car created.</returns>
+    /// <remarks>
+    /// Sample request:
+    ///
+    ///     {
+    ///        "name": "Audi",
+    ///        "price": 15000
+    ///     }.
+    ///
+    /// </remarks>
+    /// <response code="201">Returns the newly created item.</response>
+    /// <response code="400">If the item is null.</response>
     [HttpPost]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> AddCar([FromBody] CarRequest car)
     {
-        return this.Ok(await this.carService.AddCar(car));
+        return this.StatusCode(StatusCodes.Status201Created, await this.carService.AddCar(car));
     }
 
     /// <summary>
