@@ -86,6 +86,7 @@ public class CarController : ControllerBase
     /// <returns>true, if car updated.</returns>
     [HttpPatch("{id}")]
     [Produces(MediaTypeNames.Application.Json)]
+    [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Update))]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> UpdateCar([FromRoute] int id, [FromBody] CarRequest car)
     {
