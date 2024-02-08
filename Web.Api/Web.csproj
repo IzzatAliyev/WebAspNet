@@ -9,6 +9,7 @@
     <NoWarn>SA0001</NoWarn>
     <!-- SA0001 => XML comment analysis is disabled due to project configuration -->
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers> <!-- for analyzing attributes such as ProducesResponseTypeAttribute and ProducesAttribute, if the response type same -->
   </PropertyGroup>
 
   <ItemGroup>
