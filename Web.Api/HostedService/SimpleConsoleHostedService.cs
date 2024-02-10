@@ -8,15 +8,16 @@ namespace Web.Api.HostedService;
 public class SimpleConsoleHostedService : IHostedService
 {
     /// <inheritdoc/>
-    public async Task StartAsync(CancellationToken cancellationToken)
+    public Task StartAsync(CancellationToken cancellationToken)
     {
         Console.WriteLine("Simple console hosted service is starting");
-        await Task.Delay(200, cancellationToken);
+        return Task.CompletedTask;
     }
 
     /// <inheritdoc/>
     public Task StopAsync(CancellationToken cancellationToken)
     {
+        Console.WriteLine("Simple console hosted service is stopping");
         return Task.CompletedTask;
     }
 }

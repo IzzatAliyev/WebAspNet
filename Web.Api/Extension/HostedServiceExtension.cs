@@ -18,6 +18,7 @@ public static class HostedServiceExtension
     {
         builder.Services.AddHostedService<SimpleConsoleHostedService>();
         builder.Services.AddHostedService<SimpleConsole2HostedService>();
-        return builder.Services.AddHostedService<InfinityHostedService>();
+        builder.Services.AddHostedService<InfinityHostedService>();
+        return builder.Services.AddHostedService<HourlyHostedService>();
     }
 }
