@@ -10,7 +10,7 @@ using Web.Api.Middleware;
 public static class IpFilterMiddlewareExtension
 {
     /// <summary>
-    /// Use ip filter extension method.
+    /// Use ip filter middleware extension method.
     /// </summary>
     /// <param name="builder">the app builder.</param>
     /// <param name="allowedIps">the allowed ips.</param>

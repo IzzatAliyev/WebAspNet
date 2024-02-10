@@ -35,6 +35,8 @@ public class Program
     builder.Services.AddDbContext<AppDbContext>();
     builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
     builder.Services.AddProblemDetails();
+    builder.Services.Configure<HostOptions>(options => options.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.Ignore); // Exception in background service will not effect the app stopping(only if inheritet BackgroundService).
+    builder.AddHostedServices();
     builder.Services.AddHttpClient(HttpClientName.Comment.ToString(), configure =>
     {
       configure.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
