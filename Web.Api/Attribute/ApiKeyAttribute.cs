@@ -17,6 +17,7 @@ public class ApiKeyAttribute : Attribute, IAsyncActionFilter
     /// <inheritdoc/>
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
+        System.Console.WriteLine($"Triggered {nameof(ApiKeyAttribute)}");
         if (!context.HttpContext.Request.Headers.TryGetValue(ApiKey, out var apiKeyVal))
         {
             context.HttpContext.Response.StatusCode = 401;

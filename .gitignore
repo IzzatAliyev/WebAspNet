@@ -1,7 +1,6 @@
 .idea/
 bin/
 obj/
-.env
 run.txt
 .vscode/
 
@@ -9,3 +8,4 @@ BenchmarkDotNet.Artifacts/
 web.db**
 .DS_Store
 .devcontainer/
+**/appsettings*.json

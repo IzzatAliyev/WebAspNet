@@ -28,6 +28,7 @@ public class GlobalExceptionHandler : IExceptionHandler
     /// <inheritdoc/>
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
+        System.Console.WriteLine($"Triggered {nameof(GlobalExceptionHandler)}");
         this.logger.LogError(
              exception, "Exception occurred: {Message}", exception.Message);
 

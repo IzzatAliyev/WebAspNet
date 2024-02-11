@@ -33,6 +33,7 @@ public class IpFilterMiddleware
     /// <returns>A <see cref="Task"/> representing the result of the asynchronous operation.</returns>
     public async Task Invoke(HttpContext context)
     {
+        System.Console.WriteLine($"Triggered {nameof(IpFilterMiddleware)}");
         var remoteIp = context.Connection.RemoteIpAddress;
         if (!this.IsAlowed(remoteIp))
         {

@@ -21,6 +21,7 @@ public class RequestLoggingMiddleware : IMiddleware
     /// <inheritdoc/>
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
+        System.Console.WriteLine($"Triggered {nameof(RequestLoggingMiddleware)}");
         this.logger.LogInformation($"Received request from ({context.Connection.RemoteIpAddress?.ToString()}): {context.Request.Path}");
         await next(context);
     }
