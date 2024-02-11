@@ -54,9 +54,9 @@ public class Program
       app.UseHttpsRedirection();
     }
 
+    app.UseExceptionHandler();
     app.UseCors(allowOriginCorsPolicyName);
     app.UseOutputCache();
-    app.UseExceptionHandler();
     app.UseMiddleware<RequestLoggingMiddleware>();
     app.UseIpFilter("127.0.0.1, ::1");
     app.UseAuthentication();
