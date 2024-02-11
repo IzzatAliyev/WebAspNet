@@ -17,5 +17,5 @@ git reset HEAD~
 ***
 **Undo the commit and completely remove all changes**
 ```bash
-git reset --hard HEAD~**
+git reset --hard HEAD~
 ```
