@@ -16,6 +16,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        System.Console.WriteLine(typeof(Program).Assembly);
 
         // Add services to the container.
         builder.Services.AddRazorComponents()
